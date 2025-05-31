@@ -986,4 +986,3 @@ Step-by-step with Docker & Docker Compose
 How to distribute/share the container image
 
 Sharing that README.md in GitHub makes it easy for colleagues to clone, run, or load the container.
-
