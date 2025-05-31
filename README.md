@@ -4,7 +4,7 @@ This repository contains a two‐phase Spring Boot application that provides:  M
 ```
 sudo apt install -y maven
 mvn -version
-
+```
 
 Movie Search & OCR Spring Boot Application
 This repository contains a two‐phase Spring Boot application that provides:
