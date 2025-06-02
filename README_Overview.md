@@ -58,3 +58,7 @@ The recipient will:
    ```bash
    docker load -i sakila-api.tar
    docker compose up -d
+   ```
+
+4. Confirm the app works at:  
+   [http://localhost:8080/api/film-search?title=terminator](http://localhost:8080/api/film-search?title=terminator)
