@@ -1,6 +1,7 @@
-from pathlib import Path
+This is project to create app(Movie_searh), containze and distrubute without using Docker Hub.
+Enjoy !!!!
 
-readme_content = """# ✅ What You Will Do in This Project
+ ✅ What You Will Do in This Project
 
 ## 1. Create the Movie_Search App (Spring Boot)
 You will build a REST API using Spring Boot that connects to the **MySQL Sakila** database.  
@@ -37,7 +38,7 @@ You’ll explore several ways to **share your containerized app**, even when Doc
 |--------|-------------|----------------------|
 | ✅ **Option 1** | Share as `.tar.gz` package using `docker save` and zip | ❌ |
 | ✅ **Option 2** | Share source code via GitHub (with Docker setup) | ❌ |
-| ❌ Docker Hub | Push to public registry | ✅ (Not allowed in your case)
+| ❌ Docker Hub | Push to public registry | ✅ (If not allowed in your environment)
 
 In this guide, we will follow **Option 1**: share as a zipped package (`.tar.gz`) that includes:
 
