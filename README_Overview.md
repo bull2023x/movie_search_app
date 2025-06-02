@@ -3,7 +3,7 @@ Enjoy !!!!
 
  ✅ What You Will Do in This Project
 
-## 1. Create the Movie_Search App (Spring Boot)
+## 1. Create the Movie_Search App (Spring Boot)   → Please refer to "README_detail1" for details.
 You will build a REST API using Spring Boot that connects to the **MySQL Sakila** database.  
 You’ll implement endpoints like:
 
@@ -12,7 +12,7 @@ You’ll implement endpoints like:
 
 ---
 
-## 2. Containerize the App
+## 2. Containerize the App           → Please refer to "README_detail1" for details.
 You will create a `Dockerfile` to package the Spring Boot application.  
 Then, you'll write a `docker-compose.yml` file that:
 
@@ -21,7 +21,7 @@ Then, you'll write a `docker-compose.yml` file that:
 
 ---
 
-## 3. Run and Test the App
+## 3. Run and Test the App          → Please refer to "README_detail1" for details.
 You will:
 
 - Start the containers locally (Linux or Windows)  
@@ -31,7 +31,7 @@ You will:
 
 ---
 
-## 4. Share the App Without Docker Hub
+## 4. Share the App Without Docker Hub      → Please refer to "README_detail2" for details.
 You’ll explore several ways to **share your containerized app**, even when Docker Hub is not allowed:
 
 | Method | Description | Docker Hub Required |
