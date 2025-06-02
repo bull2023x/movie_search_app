@@ -1,6 +1,6 @@
-This is the project to create App(Movie_Search App) in the form of Container and share it!
+from pathlib import Path
 
-# ✅ What You Will Do in This Project
+readme_content = """# ✅ What You Will Do in This Project
 
 ## 1. Create the Movie_Search App (Spring Boot)
 You will build a REST API using Spring Boot that connects to the **MySQL Sakila** database.  
@@ -57,8 +57,3 @@ The recipient will:
    ```bash
    docker load -i sakila-api.tar
    docker compose up -d
-   ```
-
-4. Confirm the app works at:  
-   [http://localhost:8080/api/film-search?title=terminator](http://localhost:8080/api/film-search?title=terminator)
-
