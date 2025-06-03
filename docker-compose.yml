@@ -14,7 +14,7 @@ services:
       - ./sakila-db:/docker-entrypoint-initdb.d
 
   api:
-    image: bullyng/sakila-api:latest
+    image: sakila-api:latest
     depends_on:
       - db
     ports:
