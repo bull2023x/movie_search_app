@@ -48,7 +48,7 @@ In this guide, we will follow **Option 1**: share as a zipped package (`.tar.gz`
 
 ---
 
-## 5. Deploy the Shared App on Another Machine (e.g., Windows)
+## 5. Deploy the Shared App on Another Machine (e.g., Windows) <This is Option 1 descripted in ## 4.>
 The recipient will:
 
 1. Copy the `.tar.gz` file to their local environment  
