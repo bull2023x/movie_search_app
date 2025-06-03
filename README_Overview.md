@@ -38,7 +38,7 @@ You’ll explore several ways to **share your containerized app**, even when Doc
 |--------|-------------|----------------------|
 | ✅ **Option 1** | Share as `.tar.gz` package using `docker save` and zip | ❌ |
 | ✅ **Option 2** | Share source code via GitHub (with Docker setup) | ❌ |
-| ❌ Docker Hub option | Push to public registry | ✅ (If allowed in your environment)
+| ❌ Docker Hub option | Push to public registry (Docker Hub is charged. So, this is not option this time. | ✅ (If allowed in your environment)
 
 In this guide, we will follow **Option 1**: share as a zipped package (`.tar.gz`) that includes:
 
