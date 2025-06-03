@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: yireozna
+      MYSQL_ROOT_PASSWORD: PASSWORD  #  Change to your own PW for DB access
       MYSQL_DATABASE: sakila
       MYSQL_USER: sakila
       MYSQL_PASSWORD: sakila
