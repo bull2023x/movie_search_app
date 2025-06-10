@@ -6,10 +6,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: PASSWORD  #  Change to your own PW for DB access
       MYSQL_DATABASE: sakila
-      MYSQL_USER: sakila
-      MYSQL_PASSWORD: sakila
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
     ports:
-      - "3307:3306"
+      - "3306:3306"
     volumes:
       - ./sakila-db:/docker-entrypoint-initdb.d
 
