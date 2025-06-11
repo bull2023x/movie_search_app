@@ -4,24 +4,18 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: PASSWORD  #  Change to your own PW for DB access
-      MYSQL_DATABASE: sakila
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: password
-      
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE:       sakila
+      MYSQL_USER:           admin
+      MYSQL_PASSWORD:       password
     ports:
       - "3306:3306"
     volumes:
       - ./sakila-db:/docker-entrypoint-initdb.d
 
   api:
-    image: sakila-api:latest
-    depends_on:
-      - db
+    build: .
     ports:
       - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/sakila
-      SPRING_DATASOURCE_USERNAME: sakila
-      SPRING_DATASOURCE_PASSWORD: sakila
-
+    depends_on:
+      - db

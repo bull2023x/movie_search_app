@@ -1,0 +1,26 @@
+# from your project root
+cd src/main/resources
+
+# create the directory
+mkdir static
+
+# add your upload form
+cat <<EOF > static/index.html
+<!DOCTYPE html>
+<html>
+  <head><title>Upload Poster</title></head>
+  <body>
+    <h1>Upload Movie Poster</h1>
+    <form action="/api/poster-info" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required>
+      <button type="submit">Upload</button>
+    </form>
+  </body>
+</html>
+EOF
+
+# stage and push
+git add static/index.html
+git commit -m "Add upload-form index.html under static/"
+git push
+

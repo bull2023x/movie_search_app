@@ -1,0 +1,7 @@
+com\example\sakila_api\controller\HelloController.class
+com\example\sakila_api\entity\Film.class
+com\example\sakila_api\controller\FilmController.class
+com\example\sakila_api\repository\FilmRepository.class
+com\example\sakila_api\SakilaApiApplication.class
+com\example\sakila_api\service\OcrService.class
+com\example\sakila_api\controller\OcrController.class
