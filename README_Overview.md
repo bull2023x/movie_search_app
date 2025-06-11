@@ -62,3 +62,7 @@ The recipient will:
 
 4. Confirm the app works at:  
    [http://localhost:8080/api/film-search?title=terminator](http://localhost:8080/api/film-search?title=terminator)
+
+=============
+## <Reference> :  this is github solution descripted in Option 2 of No.4. 
+https://github.com/bull2023x/movie_search_app/blob/main/github_GettingStart.md
