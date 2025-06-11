@@ -64,5 +64,6 @@ The recipient will:
    [http://localhost:8080/api/film-search?title=terminator](http://localhost:8080/api/film-search?title=terminator)
 
 =============
-## <Reference> :  this is github solution descripted in Option 2 of No.4. 
+## 【Reference】 :  this is github solution descripted in Option 2 of No.4. 
+Getting Started ：　
 https://github.com/bull2023x/movie_search_app/blob/main/github_GettingStart.md
