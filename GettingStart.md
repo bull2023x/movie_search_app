@@ -4,18 +4,20 @@ This guide walks you through cloning, building, and running the Movie Search + O
 
 Prerequisites
 
-Git
+・Git
 
-Java 17+ (needed for native build) or Dockerized build below
+・Java 17+ (needed for native build) or Dockerized build below
 
-Maven 3.8+ (or use the included Maven Wrapper mvnw)
+・Maven 3.8+ (or use the included Maven Wrapper mvnw)
 
-Docker & Docker Compose (for containerized deployment)
+・Docker & Docker Compose (for containerized deployment)
 
 1. Clone the Repository
 
+```
 git clone https://github.com/bull2023x/movie_search_app.git
 cd movie_search_app
+```
 
 2A. Native Build & Run (Local JVM)
 
