@@ -1,81 +1,79 @@
+Movie Search + OCR Demo: Getting Started
 
-markdown
-Copy
-## Getting Started
+This guide walks you through cloning, building, and running the Movie Search + OCR application—either natively or with Docker.
 
-These instructions will help you get the Movie Search + OCR app up and running quickly.
+Prerequisites
 
-### Prerequisites
+Git
 
-- **Git**  
-- **Java 17+** (or Dockerized build below)  
-- **Maven 3.8+** (only for a native build)  
-- **Docker & Docker Compose** (for containerized deployment)
+Java 17+ (needed for native build) or Dockerized build below
 
----
+Maven 3.8+ (or use the included Maven Wrapper mvnw)
 
-### 1. Clone the repo
+Docker & Docker Compose (for containerized deployment)
 
-```bash
+1. Clone the Repository
+
 git clone https://github.com/bull2023x/movie_search_app.git
 cd movie_search_app
-2A. Native build & run
-If you prefer to run directly on your machine:
 
-bash
-Copy
-# Build the Spring-Boot JAR
+2A. Native Build & Run (Local JVM)
+
+# Build the Spring Boot JAR
 mvn clean package -DskipTests
 
-# Run the app
+# Run the application
 java -jar target/sakila-api-0.0.1-SNAPSHOT.jar
-Then browse to http://localhost:8080 and upload a poster.
 
-2B. Docker Compose
-If you have Docker & Compose installed, this is the easiest:
+Open your browser at http://localhost:8080 and upload a poster to test the OCR + movie lookup.
 
-bash
-Copy
-# Stop any running stack
+2B. Docker Compose (Recommended)
+
+# Stop any existing stack
 docker-compose down
 
-# Build fresh images (including OCR + DB)
+# Build fresh images (includes Tesseract OCR and MySQL Sakila DB)
 docker-compose build --no-cache
 
 # Start the containers
 docker-compose up
-Visit http://localhost:8080 in your browser.
 
-3. One-click demo scripts
+Browse to http://localhost:8080 to use the upload form. The API is exposed on /api/poster-info and /api/film-search.
+
+3. One‑Click Demo Scripts
+
 run-demo.sh (Linux / macOS)
-bash
-Copy
+
 #!/usr/bin/env bash
 set -e
+
 git pull
-docker-compose down
 mvn clean package -DskipTests
+docker-compose down
 docker-compose build --no-cache
 docker-compose up
+
 Make it executable:
 
-bash
-Copy
 chmod +x run-demo.sh
+
 run-demo.ps1 (Windows PowerShell)
-powershell
-Copy
+
 git pull
+./mvnw.cmd clean package -DskipTests
 docker-compose down
-mvnw.cmd clean package -DskipTests
 docker-compose build --no-cache
 docker-compose up
-4. Pinning a Release
-Go to the Releases tab in this repo.
+
+4. Pinning a Release on GitHub
+
+In this repo, go to the Releases tab.
 
 Click Draft a new release.
 
-Tag your current main commit (e.g. v1.0.0) and give it a title/description.
+Tag the current commit (e.g. v1.0.0), add release notes, and Publish.
 
-Publish—now users can clone a stable snapshot instead of the bleeding edge.
+Users can now download source code for that version directly.
+
+Enjoy your OCR‑powered, containerized Java demo! Feel free to open an issue or PR for enhancements.
 
