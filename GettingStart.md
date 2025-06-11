@@ -70,13 +70,13 @@ docker-compose up
 ```
 4. Pinning a Release on GitHub
 
-In this repo, go to the Releases tab.
+1．In this repo, go to the Releases tab.
 
-Click Draft a new release.
+2. Click Draft a new release.
 
-Tag the current commit (e.g. v1.0.0), add release notes, and Publish.
+3. Tag the current commit (e.g. v1.0.0), add release notes, and Publish.
 
-Users can now download source code for that version directly.
+4. Users can now download source code for that version directly.
 
 Enjoy your OCR‑powered, containerized Java demo! Feel free to open an issue or PR for enhancements.
 
