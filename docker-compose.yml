@@ -5,17 +5,17 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE:       sakila
-      MYSQL_USER:           admin
-      MYSQL_PASSWORD:       password
+      MYSQL_DATABASE: sakila
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
     volumes:
-      - ./sakila-db:/docker-entrypoint-initdb.d
-
-  api:
-    build: .
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
+      - ./sakila-db:/docker-entrypoint-initdb.d  # auto-imports on FIRST boot only
+      - dbdata:/var/lib/mysql                    # <-- persist DB files
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -uadmin -ppassword -h 127.0.0.1 --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
