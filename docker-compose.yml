@@ -1,5 +1,7 @@
 # version: "3.8"
 
+# version: "3.8"
+
 services:
   db:
     image: mysql:8.0
@@ -11,11 +13,30 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./sakila-db:/docker-entrypoint-initdb.d  # auto-imports on FIRST boot only
-      - dbdata:/var/lib/mysql                    # <-- persist DB files
+      - ./sakila-db:/docker-entrypoint-initdb.d
+      - dbdata:/var/lib/mysql
     command: ["--default-authentication-plugin=mysql_native_password"]
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -uadmin -ppassword -h 127.0.0.1 --silent"]
       interval: 5s
       timeout: 5s
       retries: 20
+
+  api:
+    build: .                                # <--- This tells Docker to use your Dockerfile in this folder
+    depends_on:
+      db:
+        condition: service_healthy           # <--- Wait until MySQL is ready
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DB_URL: jdbc:mysql://db:3306/sakila?serverTimezone=UTC&useSSL=false
+      DB_USER: admin
+      DB_PASS: password
+      TESSDATA_PATH: /opt/tessdata
+    volumes:
+      - ./tessdata:/opt/tessdata:ro          # <--- Mount local tessdata folder into the container
+    ports:
+      - "8080:8080"                          # <--- Expose the Spring Boot app
+
+volumes:
+  dbdata:
