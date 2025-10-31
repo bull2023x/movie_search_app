@@ -1,10 +1,9 @@
-# version: "3.8"
-
-# version: "3.8"
+version: "3.8"
 
 services:
   db:
     image: mysql:8.0
+    container_name: movie_search_db
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: sakila
@@ -14,29 +13,23 @@ services:
       - "3306:3306"
     volumes:
       - ./sakila-db:/docker-entrypoint-initdb.d
-      - dbdata:/var/lib/mysql
-    command: ["--default-authentication-plugin=mysql_native_password"]
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -uadmin -ppassword -h 127.0.0.1 --silent"]
-      interval: 5s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
       timeout: 5s
-      retries: 20
+      retries: 5
 
   api:
-    build: .                                # <--- This tells Docker to use your Dockerfile in this folder
+    build: .
+    container_name: movie_search_api
     depends_on:
       db:
-        condition: service_healthy           # <--- Wait until MySQL is ready
+        condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: docker
       DB_URL: jdbc:mysql://db:3306/sakila?serverTimezone=UTC&useSSL=false
       DB_USER: admin
       DB_PASS: password
-      TESSDATA_PATH: /opt/tessdata
-    volumes:
-      - ./tessdata:/opt/tessdata:ro          # <--- Mount local tessdata folder into the container
+      TESSDATA_PATH: /usr/share/tesseract-ocr/4.00/tessdata
     ports:
-      - "8080:8080"                          # <--- Expose the Spring Boot app
-
-volumes:
-  dbdata:
+      - "8080:8080"
